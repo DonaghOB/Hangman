@@ -7,7 +7,9 @@ name = ""
 
 numGuesses = 6
 
-currentWord = ""
+currentWord = []
+
+alreadyGuessed = []
 
 def getName():
     
@@ -62,6 +64,24 @@ def drawHangman():
         print( "  ______\n  |    |\n  O    |\n ---   |\n/ | \\  |\n  |    |\n ----  |\n /  \\  |\n |  |  |\n________\n" )
     
 
+def keepScore( guess ):
+    
+    global numGuesses
+    
+    if guess in alreadyGuessed:
+        print( "You already guessed this :(")
+        numGuesses -= 1
+    else:
+        alreadyGuessed.append( guess )
+        if guess in currentWord:
+            for i in len( currentWord ):
+                if currentWord[ i ] is guess:
+                    currentWord[ i ] = '-'
+        else:
+            print( guess, "is not in the word")
+            numGuesses -= 1
+    
+
 def play(): 
     
     global currentWord 
@@ -78,7 +98,7 @@ def play():
     print( current )
 
     while not finished:
-        guess()
+        keepScore( guess() )
 
         drawHangman()
         
