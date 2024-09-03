@@ -34,9 +34,14 @@ def printRules():
     print( "  ______\n  |    |\n       |\n       |\n       |\n       |\n       |\n       |\n       |\n________" )
 
 def guess():
-    
+    answer = input("Guess a letter that could be in the word: ")
+
+    if answer == "hint":
+        print(hintsSet[0])
     #TODO - Donagh this is for getInput
-    return 0
+    return answer
+
+     
 
 def isValidLetter():
     
@@ -111,6 +116,7 @@ def main():
     print( "--------------------\n" )
 
     getName()
+    guess()
     printRules()
     play()
     
