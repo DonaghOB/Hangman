@@ -43,7 +43,7 @@ def guess():
     answer = input("\nGuess a letter that could be in the word: ")
 
     if answer == "hint":
-        print(hintsSet[0])
+        print( hintsSet[0] )
     elif isValidLetter( answer ):
         return answer
     else: 
@@ -88,11 +88,17 @@ def keepScore( guess ):
     else:
         currentAlphabet.remove( guess )
         if guess in currentWord:
+            current = ""
+
             for i in range( len( currentWord ) ):
-                if currentWord[ i ] is guess:
-                    currentWord[ i ] = '-'
+                if currentWord[ i ] == "_":
+                    current = wordsSet[ 0 ][ i ] 
+                else:
+                    current += "_ "
+        
+                print( current )
         else:
-            print( guess, "is not in the word")
+            print( guess, "is not in the word" )
             numGuesses -= 1
     
 
@@ -107,7 +113,11 @@ def play():
     current = ""
 
     for i in range( len( currentWord ) ):
-        current += "_ "
+        if currentWord[ i ] == "_":
+            current = wordsSet[ 0 ][ i ] 
+            print( wordsSet[ 0 ] )
+        else:
+            current += "_ "
         
     print( current )
 
