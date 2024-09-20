@@ -88,18 +88,22 @@ def keepScore( guess ):
     else:
         currentAlphabet.remove( guess )
         if guess in currentWord:
-            current = ""
-
             for i in range( len( currentWord ) ):
-                if currentWord[ i ] == "_":
-                    current = wordsSet[ 0 ][ i ] 
-                else:
-                    current += "_ "
-        
-                print( current )
+                if currentWord[ i ] is guess:
+                    currentWord[ i ] = '-'
         else:
             print( guess, "is not in the word" )
             numGuesses -= 1
+    
+    current = ""
+
+    for i in range( len( currentWord ) ):
+        if currentWord[ i ] == "-":
+            current += wordsSet[ 0 ][ i ] 
+        else:
+            current += "_ "
+        
+    print( current )
     
 
 def play(): 
