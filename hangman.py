@@ -2,6 +2,7 @@ currentAlphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
 
 wordsSet = [ "Bicycle" ]
 hintsSet = [ "A mode of transport" ]
+WordNumber = 0
 
 name = ""
 
@@ -9,7 +10,7 @@ numGuesses = 6
 
 currentWord = []
 
-alreadyGuessed = []
+alreadyGuessed = [] 
 
 def getName():
     
@@ -38,13 +39,21 @@ def guess():
 
     if answer == "hint":
         print(hintsSet[0])
+    #else:
+
+
+    #elif alreadyGuessed(answer):
+       # print("Already guessed, please try again")
+   # elif isInWord(wordsSet[currentWord], answer):
+    #  print("Correct! you got " + answer + " right")
     #TODO - Donagh this is for getInput
     return answer
 
      
 
-def isValidLetter():
-    
+def isValidLetter(answer):
+    if answer ==int:
+        print("WRONG INPUT!")
     #TODO Donagh
 
     return False
@@ -116,8 +125,9 @@ def main():
     print( "--------------------\n" )
 
     getName()
-    guess()
     printRules()
+    #guess()
+    
     play()
     
 
