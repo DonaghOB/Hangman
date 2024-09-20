@@ -3,7 +3,7 @@ import time
 
 urrentAlphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
 
-wordsSet = [ "Bicycle" ]
+wordsSet = [ "BICYCLE" ]
 hintsSet = [ "A mode of transport" ]
 WordNumber = 0
 
@@ -46,22 +46,19 @@ def guess():
 
     if answer == "hint":
         print(hintsSet[0])
-    #else:
-
-
-    #elif alreadyGuessed(answer):
-       # print("Already guessed, please try again")
-   # elif isInWord(wordsSet[currentWord], answer):
-    #  print("Correct! you got " + answer + " right")
-    #TODO - Donagh this is for getInput
+    elif isValidLetter( answer ):
+        print( "yay" )
         return answer
+    else: 
+        print( "Please guess again" )
 
      
-
-def isValidLetter(answer):
-    if answer ==int:
-        print("WRONG INPUT!")
-    #TODO Donagh
+def isValidLetter( answer ):
+    if str.isupper( answer ) and len( answer ) == 1:
+        return True
+        
+        
+    print("WRONG INPUT!")
 
     return False
 
