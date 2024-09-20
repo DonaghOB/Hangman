@@ -156,7 +156,7 @@ def main():
     #guess()
     
     play()
-    endResult()
+    #endResult()
 
 if __name__ == "__main__":
     main()
