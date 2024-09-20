@@ -13,8 +13,6 @@ numGuesses = 6
 
 currentWord = []
 
-alreadyGuessed = [] 
-
 def getName():
     
     global name
@@ -47,7 +45,6 @@ def guess():
     if answer == "hint":
         print(hintsSet[0])
     elif isValidLetter( answer ):
-        print( "yay" )
         return answer
     else: 
         print( "Please guess again" )
@@ -85,13 +82,13 @@ def keepScore( guess ):
     
     global numGuesses
     
-    if guess in alreadyGuessed:
+    if guess not in currentAlphabet:
         print( "You already guessed this :(")
         numGuesses -= 1
     else:
-        alreadyGuessed.append( guess )
+        currentAlphabet.remove( guess )
         if guess in currentWord:
-            for i in len( currentWord ):
+            for i in range( len( currentWord ) ):
                 if currentWord[ i ] is guess:
                     currentWord[ i ] = '-'
         else:
@@ -106,7 +103,7 @@ def play():
     finished = False
 
     print( "Okay your mystery word is: \n" )
-    currentWord = wordsSet[ 0 ]
+    currentWord = list( wordsSet[ 0 ] )
     current = ""
 
     for i in range( len( currentWord ) ):
