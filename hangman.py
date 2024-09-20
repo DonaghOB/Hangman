@@ -102,8 +102,13 @@ def keepScore( guess ):
             current += wordsSet[ 0 ][ i ] 
         else:
             current += "_ "
-        
-    print( current )
+
+    for i in range( len( currentWord ) ):
+        if currentWord[ i ] is not "-":
+            print( current )
+            return
+            
+    print( "Congratulations you have won!!")
     
 
 def play(): 
