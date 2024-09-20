@@ -1,7 +1,7 @@
 import time
 
 
-urrentAlphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+currentAlphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
 
 wordsSet = [ "BICYCLE" ]
 hintsSet = [ "A mode of transport" ]
@@ -55,8 +55,7 @@ def guess():
      
 def isValidLetter( answer ):
     if str.isupper( answer ) and len( answer ) == 1:
-        return True
-        
+        return True   
         
     print("WRONG INPUT!")
 
