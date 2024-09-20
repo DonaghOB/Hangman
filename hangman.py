@@ -1,4 +1,7 @@
-currentAlphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+import time
+
+
+urrentAlphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
 
 wordsSet = [ "Bicycle" ]
 hintsSet = [ "A mode of transport" ]
@@ -27,15 +30,19 @@ def printRules():
     print( "    4. All of your guesses must be a letter - capital or lowercase")
     print( "    5. And finally...... Have Fun!\n")
 
+    time.sleep( 2 )
+    
     print( "Now that the rules are out of the way - here is your hangman:")
     print( "  O\n ---\n/ | \\\n  |\n ----\n /  \\\n |  |")
     print( "\nHis name is Steve - try to save him :)))")
+
+    time.sleep( 2 )
 
     print( "\nTo start - Steve is free\n" )
     print( "  ______\n  |    |\n       |\n       |\n       |\n       |\n       |\n       |\n       |\n________" )
 
 def guess():
-    answer = input("Guess a letter that could be in the word: ")
+    answer = input("\nGuess a letter that could be in the word: ")
 
     if answer == "hint":
         print(hintsSet[0])
@@ -47,7 +54,7 @@ def guess():
    # elif isInWord(wordsSet[currentWord], answer):
     #  print("Correct! you got " + answer + " right")
     #TODO - Donagh this is for getInput
-    return answer
+        return answer
 
      
 
