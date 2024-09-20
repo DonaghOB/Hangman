@@ -41,8 +41,9 @@ def printRules():
 
 def guess():
     answer = input("\nGuess a letter that could be in the word: ")
-
-    if answer == "hint":
+    hint = "hint"
+    if answer == hint:
+        print("Here is your hint: ")
         print( hintsSet[0] )
     elif isValidLetter( answer ):
         return answer
@@ -78,10 +79,13 @@ def drawHangman():
         print( "  ______\n  |    |\n  O    |\n ---   |\n/ | \\  |\n  |    |\n ----  |\n /  \\  |\n |  |  |\n________\n" )
     
 
+
 def keepScore( guess ):
     
     global numGuesses
-    
+    if numGuesses==0:
+        print("Im sorry, you lost")
+        exit()
     if guess not in currentAlphabet:
         print( "You already guessed this :(")
         numGuesses -= 1
@@ -111,8 +115,12 @@ def keepScore( guess ):
     print( "Congratulations you have won!!")
     
 
+
+
+
+
 def play(): 
-    
+ 
     global currentWord 
 
     finished = False
@@ -138,7 +146,7 @@ def play():
     
 # Starting the Program
 def main():
-    
+  
     # SETUP
     print( "WELCOME TO HANGMAN!!" )
     print( "--------------------\n" )
@@ -148,7 +156,7 @@ def main():
     #guess()
     
     play()
-    
+    endResult()
 
 if __name__ == "__main__":
     main()
